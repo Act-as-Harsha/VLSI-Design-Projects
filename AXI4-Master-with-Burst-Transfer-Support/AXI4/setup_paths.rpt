@@ -1,0 +1,776 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sat Oct 10 22:03:26 2026
+| Host         : HP running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -max_paths 10 -path_type full_clock_expanded -file setup_paths.rpt
+| Design       : axi4_dma_fpga_top
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.660ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_addr_reg_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        9.343ns  (logic 2.698ns (28.878%)  route 6.645ns (71.122%))
+  Logic Levels:           10  (CARRY4=2 LUT2=1 LUT4=2 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.893    13.596    u_dma/u_dma_controller/E[0]
+    SLICE_X107Y46        LUT4 (Prop_lut4_I2_O)        0.124    13.720 r  u_dma/u_dma_controller/rd_addr_reg[9]_i_6/O
+                         net (fo=1, routed)           0.000    13.720    u_dma/u_dma_controller/rd_addr_reg[9]_i_6_n_0
+    SLICE_X107Y46        CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    14.270 r  u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    14.270    u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1_n_0
+    SLICE_X107Y47        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    14.604 r  u_dma/u_dma_controller/rd_addr_reg_reg[11]_i_1/O[1]
+                         net (fo=1, routed)           0.000    14.604    u_dma/u_dma_controller/rd_addr_reg_reg[11]_i_1_n_6
+    SLICE_X107Y47        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y47        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[11]/C
+                         clock pessimism              0.499    15.238    
+                         clock uncertainty           -0.035    15.202    
+    SLICE_X107Y47        FDRE (Setup_fdre_C_D)        0.062    15.264    u_dma/u_dma_controller/rd_addr_reg_reg[11]
+  -------------------------------------------------------------------
+                         required time                         15.264    
+                         arrival time                         -14.604    
+  -------------------------------------------------------------------
+                         slack                                  0.660    
+
+Slack (MET) :             0.727ns  (required time - arrival time)
+  Source:                 u_dma/u_data_fifo/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_remaining_reg_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        9.327ns  (logic 3.695ns (39.616%)  route 5.632ns (60.384%))
+  Logic Levels:           16  (CARRY4=8 LUT2=1 LUT3=1 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        0.014ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.183ns
+    Clock Pessimism Removal (CPR):    0.458ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.802     5.183    u_dma/u_data_fifo/CLK
+    SLICE_X105Y42        FDRE                                         r  u_dma/u_data_fifo/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y42        FDRE (Prop_fdre_C_Q)         0.419     5.602 f  u_dma/u_data_fifo/count_reg_reg[0]/Q
+                         net (fo=18, routed)          0.871     6.472    u_dma/u_data_fifo/Q[0]
+    SLICE_X103Y42        LUT4 (Prop_lut4_I1_O)        0.299     6.771 r  u_dma/u_data_fifo/FSM_sequential_state[1]_i_9/O
+                         net (fo=4, routed)           1.172     7.944    u_dma/u_data_fifo/FSM_sequential_state[1]_i_9_n_0
+    SLICE_X102Y42        LUT5 (Prop_lut5_I0_O)        0.150     8.094 f  u_dma/u_data_fifo/beats_reg[4]_i_11/O
+                         net (fo=1, routed)           0.452     8.546    u_dma/u_data_fifo/beats_reg[4]_i_11_n_0
+    SLICE_X102Y42        LUT6 (Prop_lut6_I5_O)        0.328     8.874 f  u_dma/u_data_fifo/beats_reg[4]_i_4/O
+                         net (fo=5, routed)           0.870     9.744    u_dma/u_data_fifo/count_reg_reg[8]_0
+    SLICE_X103Y43        LUT5 (Prop_lut5_I4_O)        0.152     9.896 f  u_dma/u_data_fifo/beats_reg[2]_i_14/O
+                         net (fo=1, routed)           0.559    10.455    u_dma/u_data_fifo/beats_reg[2]_i_14_n_0
+    SLICE_X105Y43        LUT6 (Prop_lut6_I5_O)        0.332    10.787 r  u_dma/u_data_fifo/beats_reg[2]_i_5/O
+                         net (fo=4, routed)           0.487    11.274    u_dma/u_dma_controller/beats_reg_reg[0]
+    SLICE_X105Y43        LUT6 (Prop_lut6_I1_O)        0.124    11.398 r  u_dma/u_dma_controller/beats_reg[0]_i_1/O
+                         net (fo=5, routed)           0.562    11.959    u_dma/u_dma_controller/rd_cmd_beats[0]
+    SLICE_X106Y41        LUT2 (Prop_lut2_I1_O)        0.124    12.083 r  u_dma/u_dma_controller/rd_remaining_reg0_carry_i_4/O
+                         net (fo=1, routed)           0.000    12.083    u_dma/u_dma_controller/rd_remaining_reg0_carry_i_4_n_0
+    SLICE_X106Y41        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    12.615 r  u_dma/u_dma_controller/rd_remaining_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000    12.615    u_dma/u_dma_controller/rd_remaining_reg0_carry_n_0
+    SLICE_X106Y42        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.729 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    12.729    u_dma/u_dma_controller/rd_remaining_reg0_carry__0_n_0
+    SLICE_X106Y43        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.843 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000    12.843    u_dma/u_dma_controller/rd_remaining_reg0_carry__1_n_0
+    SLICE_X106Y44        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.957 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000    12.957    u_dma/u_dma_controller/rd_remaining_reg0_carry__2_n_0
+    SLICE_X106Y45        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.071 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000    13.071    u_dma/u_dma_controller/rd_remaining_reg0_carry__3_n_0
+    SLICE_X106Y46        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.185 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    13.185    u_dma/u_dma_controller/rd_remaining_reg0_carry__4_n_0
+    SLICE_X106Y47        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.299 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    13.299    u_dma/u_dma_controller/rd_remaining_reg0_carry__5_n_0
+    SLICE_X106Y48        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.521 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__6/O[0]
+                         net (fo=1, routed)           0.659    14.181    u_dma/u_dma_controller/rd_remaining_reg0[28]
+    SLICE_X107Y48        LUT3 (Prop_lut3_I2_O)        0.329    14.510 r  u_dma/u_dma_controller/rd_remaining_reg[31]_i_2/O
+                         net (fo=1, routed)           0.000    14.510    u_dma/u_dma_controller/rd_remaining_reg[31]_i_2_n_0
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[31]/C
+                         clock pessimism              0.458    15.197    
+                         clock uncertainty           -0.035    15.161    
+    SLICE_X107Y48        FDRE (Setup_fdre_C_D)        0.075    15.236    u_dma/u_dma_controller/rd_remaining_reg_reg[31]
+  -------------------------------------------------------------------
+                         required time                         15.236    
+                         arrival time                         -14.510    
+  -------------------------------------------------------------------
+                         slack                                  0.727    
+
+Slack (MET) :             0.771ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_addr_reg_reg[10]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        9.232ns  (logic 2.587ns (28.023%)  route 6.645ns (71.977%))
+  Logic Levels:           10  (CARRY4=2 LUT2=1 LUT4=2 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.893    13.596    u_dma/u_dma_controller/E[0]
+    SLICE_X107Y46        LUT4 (Prop_lut4_I2_O)        0.124    13.720 r  u_dma/u_dma_controller/rd_addr_reg[9]_i_6/O
+                         net (fo=1, routed)           0.000    13.720    u_dma/u_dma_controller/rd_addr_reg[9]_i_6_n_0
+    SLICE_X107Y46        CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    14.270 r  u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    14.270    u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1_n_0
+    SLICE_X107Y47        CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.223    14.493 r  u_dma/u_dma_controller/rd_addr_reg_reg[11]_i_1/O[0]
+                         net (fo=1, routed)           0.000    14.493    u_dma/u_dma_controller/rd_addr_reg_reg[11]_i_1_n_7
+    SLICE_X107Y47        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[10]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y47        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[10]/C
+                         clock pessimism              0.499    15.238    
+                         clock uncertainty           -0.035    15.202    
+    SLICE_X107Y47        FDRE (Setup_fdre_C_D)        0.062    15.264    u_dma/u_dma_controller/rd_addr_reg_reg[10]
+  -------------------------------------------------------------------
+                         required time                         15.264    
+                         arrival time                         -14.493    
+  -------------------------------------------------------------------
+                         slack                                  0.771    
+
+Slack (MET) :             0.804ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_remaining_reg_reg[28]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        8.932ns  (logic 1.814ns (20.310%)  route 7.118ns (79.690%))
+  Logic Levels:           8  (LUT2=2 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.702    13.405    u_dma/u_dma_controller/E[0]
+    SLICE_X109Y44        LUT2 (Prop_lut2_I1_O)        0.124    13.529 r  u_dma/u_dma_controller/rd_remaining_reg[31]_i_1/O
+                         net (fo=39, routed)          0.664    14.193    u_dma/u_dma_controller/rd_remaining_reg[31]_i_1_n_0
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[28]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[28]/C
+                         clock pessimism              0.499    15.238    
+                         clock uncertainty           -0.035    15.202    
+    SLICE_X107Y48        FDRE (Setup_fdre_C_CE)      -0.205    14.997    u_dma/u_dma_controller/rd_remaining_reg_reg[28]
+  -------------------------------------------------------------------
+                         required time                         14.997    
+                         arrival time                         -14.193    
+  -------------------------------------------------------------------
+                         slack                                  0.804    
+
+Slack (MET) :             0.804ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_remaining_reg_reg[29]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        8.932ns  (logic 1.814ns (20.310%)  route 7.118ns (79.690%))
+  Logic Levels:           8  (LUT2=2 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.702    13.405    u_dma/u_dma_controller/E[0]
+    SLICE_X109Y44        LUT2 (Prop_lut2_I1_O)        0.124    13.529 r  u_dma/u_dma_controller/rd_remaining_reg[31]_i_1/O
+                         net (fo=39, routed)          0.664    14.193    u_dma/u_dma_controller/rd_remaining_reg[31]_i_1_n_0
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[29]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[29]/C
+                         clock pessimism              0.499    15.238    
+                         clock uncertainty           -0.035    15.202    
+    SLICE_X107Y48        FDRE (Setup_fdre_C_CE)      -0.205    14.997    u_dma/u_dma_controller/rd_remaining_reg_reg[29]
+  -------------------------------------------------------------------
+                         required time                         14.997    
+                         arrival time                         -14.193    
+  -------------------------------------------------------------------
+                         slack                                  0.804    
+
+Slack (MET) :             0.804ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_remaining_reg_reg[30]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        8.932ns  (logic 1.814ns (20.310%)  route 7.118ns (79.690%))
+  Logic Levels:           8  (LUT2=2 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.702    13.405    u_dma/u_dma_controller/E[0]
+    SLICE_X109Y44        LUT2 (Prop_lut2_I1_O)        0.124    13.529 r  u_dma/u_dma_controller/rd_remaining_reg[31]_i_1/O
+                         net (fo=39, routed)          0.664    14.193    u_dma/u_dma_controller/rd_remaining_reg[31]_i_1_n_0
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[30]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[30]/C
+                         clock pessimism              0.499    15.238    
+                         clock uncertainty           -0.035    15.202    
+    SLICE_X107Y48        FDRE (Setup_fdre_C_CE)      -0.205    14.997    u_dma/u_dma_controller/rd_remaining_reg_reg[30]
+  -------------------------------------------------------------------
+                         required time                         14.997    
+                         arrival time                         -14.193    
+  -------------------------------------------------------------------
+                         slack                                  0.804    
+
+Slack (MET) :             0.804ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_remaining_reg_reg[31]/CE
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        8.932ns  (logic 1.814ns (20.310%)  route 7.118ns (79.690%))
+  Logic Levels:           8  (LUT2=2 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.702    13.405    u_dma/u_dma_controller/E[0]
+    SLICE_X109Y44        LUT2 (Prop_lut2_I1_O)        0.124    13.529 r  u_dma/u_dma_controller/rd_remaining_reg[31]_i_1/O
+                         net (fo=39, routed)          0.664    14.193    u_dma/u_dma_controller/rd_remaining_reg[31]_i_1_n_0
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[31]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[31]/C
+                         clock pessimism              0.499    15.238    
+                         clock uncertainty           -0.035    15.202    
+    SLICE_X107Y48        FDRE (Setup_fdre_C_CE)      -0.205    14.997    u_dma/u_dma_controller/rd_remaining_reg_reg[31]
+  -------------------------------------------------------------------
+                         required time                         14.997    
+                         arrival time                         -14.193    
+  -------------------------------------------------------------------
+                         slack                                  0.804    
+
+Slack (MET) :             0.818ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_addr_reg_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        9.184ns  (logic 2.698ns (29.378%)  route 6.486ns (70.622%))
+  Logic Levels:           10  (CARRY4=2 LUT2=1 LUT4=2 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.737ns = ( 14.737 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.734    13.437    u_dma/u_dma_controller/E[0]
+    SLICE_X107Y45        LUT4 (Prop_lut4_I2_O)        0.124    13.561 r  u_dma/u_dma_controller/rd_addr_reg[5]_i_7/O
+                         net (fo=1, routed)           0.000    13.561    u_dma/u_dma_controller/rd_addr_reg[5]_i_7_n_0
+    SLICE_X107Y45        CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    14.111 r  u_dma/u_dma_controller/rd_addr_reg_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    14.111    u_dma/u_dma_controller/rd_addr_reg_reg[5]_i_1_n_0
+    SLICE_X107Y46        CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    14.445 r  u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1/O[1]
+                         net (fo=1, routed)           0.000    14.445    u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1_n_6
+    SLICE_X107Y46        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.700    14.737    u_dma/u_dma_controller/CLK
+    SLICE_X107Y46        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[7]/C
+                         clock pessimism              0.499    15.237    
+                         clock uncertainty           -0.035    15.201    
+    SLICE_X107Y46        FDRE (Setup_fdre_C_D)        0.062    15.263    u_dma/u_dma_controller/rd_addr_reg_reg[7]
+  -------------------------------------------------------------------
+                         required time                         15.263    
+                         arrival time                         -14.445    
+  -------------------------------------------------------------------
+                         slack                                  0.818    
+
+Slack (MET) :             0.825ns  (required time - arrival time)
+  Source:                 u_dma/u_data_fifo/count_reg_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_remaining_reg_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        9.229ns  (logic 3.675ns (39.821%)  route 5.554ns (60.179%))
+  Logic Levels:           15  (CARRY4=7 LUT2=1 LUT3=1 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        0.014ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.738ns = ( 14.738 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.183ns
+    Clock Pessimism Removal (CPR):    0.458ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.802     5.183    u_dma/u_data_fifo/CLK
+    SLICE_X105Y42        FDRE                                         r  u_dma/u_data_fifo/count_reg_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X105Y42        FDRE (Prop_fdre_C_Q)         0.419     5.602 f  u_dma/u_data_fifo/count_reg_reg[0]/Q
+                         net (fo=18, routed)          0.871     6.472    u_dma/u_data_fifo/Q[0]
+    SLICE_X103Y42        LUT4 (Prop_lut4_I1_O)        0.299     6.771 r  u_dma/u_data_fifo/FSM_sequential_state[1]_i_9/O
+                         net (fo=4, routed)           1.172     7.944    u_dma/u_data_fifo/FSM_sequential_state[1]_i_9_n_0
+    SLICE_X102Y42        LUT5 (Prop_lut5_I0_O)        0.150     8.094 f  u_dma/u_data_fifo/beats_reg[4]_i_11/O
+                         net (fo=1, routed)           0.452     8.546    u_dma/u_data_fifo/beats_reg[4]_i_11_n_0
+    SLICE_X102Y42        LUT6 (Prop_lut6_I5_O)        0.328     8.874 f  u_dma/u_data_fifo/beats_reg[4]_i_4/O
+                         net (fo=5, routed)           0.870     9.744    u_dma/u_data_fifo/count_reg_reg[8]_0
+    SLICE_X103Y43        LUT5 (Prop_lut5_I4_O)        0.152     9.896 f  u_dma/u_data_fifo/beats_reg[2]_i_14/O
+                         net (fo=1, routed)           0.559    10.455    u_dma/u_data_fifo/beats_reg[2]_i_14_n_0
+    SLICE_X105Y43        LUT6 (Prop_lut6_I5_O)        0.332    10.787 r  u_dma/u_data_fifo/beats_reg[2]_i_5/O
+                         net (fo=4, routed)           0.487    11.274    u_dma/u_dma_controller/beats_reg_reg[0]
+    SLICE_X105Y43        LUT6 (Prop_lut6_I1_O)        0.124    11.398 r  u_dma/u_dma_controller/beats_reg[0]_i_1/O
+                         net (fo=5, routed)           0.562    11.959    u_dma/u_dma_controller/rd_cmd_beats[0]
+    SLICE_X106Y41        LUT2 (Prop_lut2_I1_O)        0.124    12.083 r  u_dma/u_dma_controller/rd_remaining_reg0_carry_i_4/O
+                         net (fo=1, routed)           0.000    12.083    u_dma/u_dma_controller/rd_remaining_reg0_carry_i_4_n_0
+    SLICE_X106Y41        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    12.615 r  u_dma/u_dma_controller/rd_remaining_reg0_carry/CO[3]
+                         net (fo=1, routed)           0.000    12.615    u_dma/u_dma_controller/rd_remaining_reg0_carry_n_0
+    SLICE_X106Y42        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.729 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__0/CO[3]
+                         net (fo=1, routed)           0.000    12.729    u_dma/u_dma_controller/rd_remaining_reg0_carry__0_n_0
+    SLICE_X106Y43        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.843 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__1/CO[3]
+                         net (fo=1, routed)           0.000    12.843    u_dma/u_dma_controller/rd_remaining_reg0_carry__1_n_0
+    SLICE_X106Y44        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.957 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000    12.957    u_dma/u_dma_controller/rd_remaining_reg0_carry__2_n_0
+    SLICE_X106Y45        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.071 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000    13.071    u_dma/u_dma_controller/rd_remaining_reg0_carry__3_n_0
+    SLICE_X106Y46        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    13.185 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    13.185    u_dma/u_dma_controller/rd_remaining_reg0_carry__4_n_0
+    SLICE_X106Y47        CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    13.498 r  u_dma/u_dma_controller/rd_remaining_reg0_carry__5/O[3]
+                         net (fo=1, routed)           0.581    14.079    u_dma/u_dma_controller/rd_remaining_reg0[27]
+    SLICE_X107Y48        LUT3 (Prop_lut3_I2_O)        0.332    14.411 r  u_dma/u_dma_controller/rd_remaining_reg[30]_i_1/O
+                         net (fo=1, routed)           0.000    14.411    u_dma/u_dma_controller/rd_remaining_reg[30]_i_1_n_0
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.701    14.738    u_dma/u_dma_controller/CLK
+    SLICE_X107Y48        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[30]/C
+                         clock pessimism              0.458    15.197    
+                         clock uncertainty           -0.035    15.161    
+    SLICE_X107Y48        FDRE (Setup_fdre_C_D)        0.075    15.236    u_dma/u_dma_controller/rd_remaining_reg_reg[30]
+  -------------------------------------------------------------------
+                         required time                         15.236    
+                         arrival time                         -14.411    
+  -------------------------------------------------------------------
+                         slack                                  0.825    
+
+Slack (MET) :             0.839ns  (required time - arrival time)
+  Source:                 u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            u_dma/u_dma_controller/rd_addr_reg_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (clk rise@10.000ns - clk rise@0.000ns)
+  Data Path Delay:        9.163ns  (logic 2.677ns (29.217%)  route 6.486ns (70.783%))
+  Logic Levels:           10  (CARRY4=2 LUT2=1 LUT4=2 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.737ns = ( 14.737 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.262ns
+    Clock Pessimism Removal (CPR):    0.499ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+    U14                                               0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         1.075     1.075 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.205     3.280    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     3.381 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.881     5.262    u_dma/u_dma_controller/CLK
+    SLICE_X109Y46        FDRE                                         r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X109Y46        FDRE (Prop_fdre_C_Q)         0.419     5.681 r  u_dma/u_dma_controller/rd_remaining_reg_reg[23]/Q
+                         net (fo=3, routed)           0.879     6.560    u_dma/u_dma_controller/p_0_in[20]
+    SLICE_X109Y46        LUT4 (Prop_lut4_I0_O)        0.299     6.859 r  u_dma/u_dma_controller/done_i_12/O
+                         net (fo=2, routed)           1.176     8.035    u_dma/u_dma_controller/done_i_12_n_0
+    SLICE_X105Y45        LUT6 (Prop_lut6_I0_O)        0.124     8.159 r  u_dma/u_dma_controller/beats_reg[4]_i_3/O
+                         net (fo=8, routed)           0.578     8.737    u_dma/u_dma_controller/rd_remaining_reg_reg[23]_0
+    SLICE_X105Y44        LUT2 (Prop_lut2_I1_O)        0.124     8.861 f  u_dma/u_dma_controller/beats_reg[3]_i_3/O
+                         net (fo=2, routed)           0.677     9.538    u_dma/u_dma_controller/beats_reg[3]_i_3_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.124     9.662 r  u_dma/u_dma_controller/beats_reg[2]_i_17/O
+                         net (fo=1, routed)           0.643    10.305    u_dma/u_dma_controller/beats_reg[2]_i_17_n_0
+    SLICE_X105Y44        LUT5 (Prop_lut5_I0_O)        0.150    10.455 r  u_dma/u_dma_controller/beats_reg[2]_i_7/O
+                         net (fo=4, routed)           0.850    11.305    u_dma/u_dma_controller/rd_remaining_reg_reg[6]_0
+    SLICE_X107Y42        LUT6 (Prop_lut6_I5_O)        0.326    11.631 r  u_dma/u_dma_controller/beats_reg[3]_i_2/O
+                         net (fo=5, routed)           0.948    12.579    u_dma/u_dma_controller/rd_cmd_beats[1]
+    SLICE_X104Y44        LUT6 (Prop_lut6_I1_O)        0.124    12.703 r  u_dma/u_dma_controller/FSM_onehot_state[2]_i_2/O
+                         net (fo=56, routed)          0.734    13.437    u_dma/u_dma_controller/E[0]
+    SLICE_X107Y45        LUT4 (Prop_lut4_I2_O)        0.124    13.561 r  u_dma/u_dma_controller/rd_addr_reg[5]_i_7/O
+                         net (fo=1, routed)           0.000    13.561    u_dma/u_dma_controller/rd_addr_reg[5]_i_7_n_0
+    SLICE_X107Y45        CARRY4 (Prop_carry4_S[1]_CO[3])
+                                                      0.550    14.111 r  u_dma/u_dma_controller/rd_addr_reg_reg[5]_i_1/CO[3]
+                         net (fo=1, routed)           0.000    14.111    u_dma/u_dma_controller/rd_addr_reg_reg[5]_i_1_n_0
+    SLICE_X107Y46        CARRY4 (Prop_carry4_CI_O[3])
+                                                      0.313    14.424 r  u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1/O[3]
+                         net (fo=1, routed)           0.000    14.424    u_dma/u_dma_controller/rd_addr_reg_reg[9]_i_1_n_4
+    SLICE_X107Y46        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)       10.000    10.000 r  
+    U14                                               0.000    10.000 r  clk (IN)
+                         net (fo=0)                   0.000    10.000    clk
+    U14                  IBUF (Prop_ibuf_I_O)         0.940    10.940 r  clk_IBUF_inst/O
+                         net (fo=1, routed)           2.006    12.946    clk_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.037 r  clk_IBUF_BUFG_inst/O
+                         net (fo=158, routed)         1.700    14.737    u_dma/u_dma_controller/CLK
+    SLICE_X107Y46        FDRE                                         r  u_dma/u_dma_controller/rd_addr_reg_reg[9]/C
+                         clock pessimism              0.499    15.237    
+                         clock uncertainty           -0.035    15.201    
+    SLICE_X107Y46        FDRE (Setup_fdre_C_D)        0.062    15.263    u_dma/u_dma_controller/rd_addr_reg_reg[9]
+  -------------------------------------------------------------------
+                         required time                         15.263    
+                         arrival time                         -14.424    
+  -------------------------------------------------------------------
+                         slack                                  0.839    
+
+
+
+

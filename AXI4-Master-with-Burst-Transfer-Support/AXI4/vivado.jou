@@ -1,0 +1,377 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Oct 10 21:38:28 2026
+# Process ID         : 26360
+# Current directory  : C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI
+# Command line       : vivado.exe -gui_launcher_event rodinguilauncherevent17776 C:\Users\harsh\Downloads\CC-project\CC-Project\CC-Project-VLSI\CC-Project-VLSI.xpr
+# Log file           : C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/vivado.log
+# Journal file       : C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI\vivado.jou
+# Running On         : HP
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 8321 MB
+# Total Virtual      : 25124 MB
+# Available Virtual  : 8149 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_axi4_dma_top.tcl
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+open_run impl_1
+read_saif {C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.sim/sim_1/behav/xsim/dma_fpga.saif}
+report_power -name {power_1}
+get_property PART [current_project]
+get_ports *
+report_clocks
+check_timing -verbose
+# 1. Main timing report
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file timing_summary.rpt
+# 2. Worst setup paths
+report_timing -delay_type max -max_paths 10 -path_type full_clock_expanded -file setup_paths.rpt
+# 3. Worst hold paths
+report_timing -delay_type min -max_paths 10 -path_type full_clock_expanded -file hold_paths.rpt
+# 4. Clock network and skew analysis
+report_clock_utilization -file clock_utilization.rpt
+# 5. Design rule checks
+report_drc -file drc_report.rpt
+# 6. I/O assignments
+report_io -file io_report.rpt
+report_compile_order -constraints
+report_compile_order -constraints
+reset_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+refresh_design
+# Generate a fresh report for the worst setup paths
+report_timing -delay_type max -max_paths 10 -nworst 3 -path_type full_clock_expanded -input_pins -nets -file worst_setup_paths.rpt
+# Refresh the full timing summary
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -file timing_summary.rpt
+report_timing -delay_type max -max_paths 10 -nworst 3 -path_type full_clock_expanded -input_pins -nets
+# Show the current output timing constraints
+report_exceptions
+# Inspect the three output paths
+report_timing -to [get_ports busy] -delay_type max -path_type full_clock_expanded
+report_timing -to [get_ports done] -delay_type max -path_type full_clock_expanded
+report_timing -to [get_ports error] -delay_type max -path_type full_clock_expanded
+# Check the physical I/O properties
+report_io
+report_clocks
+report_timing_summary -delay_type max -report_unconstrained
+report_clocks
+report_timing_summary -delay_type max -report_unconstrained
+report_exceptions
+report_timing -to [get_ports {busy done error}] -delay_type max -max_paths 3
+reset_output_delay [get_ports {busy done error}]
+remove_timing_constraint -all
+get_files -filter {FILE_TYPE == XDC}
+reset_run impl_1
+launch_runs impl_1 -to_step route_design -jobs 4
+wait_on_run impl_1
+open_run impl_1
+report_timing_summary -delay_type max -report_unconstrained
+check_timing -verbose
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+reset_run impl_1
+launch_runs impl_1 -to_step route_design -jobs 4
+wait_on_run impl_1
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained
+report_io
+report_drc
+check_timing -verbose
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+check_timing -verbose
+report_timing_summary -delay_type min_max -report_unconstrained
+report_io
+report_timing -to [get_ports busy] -delay_type max -max_paths 3
+report_timing -to [get_ports done] -delay_type max -max_paths 3
+report_timing -to [get_ports error] -delay_type max -max_paths 3
+create_ip -name clk_wiz -vendor xilinx.com -library ip -version 6.0 -module_name clk_wiz_0
+set_property -dict [list \
+  CONFIG.CLKIN1_JITTER_PS {80.0} \
+  CONFIG.CLKOUT1_JITTER {124.615} \
+  CONFIG.CLKOUT1_PHASE_ERROR {96.948} \
+  CONFIG.MMCM_CLKFBOUT_MULT_F {8.000} \
+  CONFIG.MMCM_CLKIN1_PERIOD {8.000} \
+  CONFIG.PRIM_IN_FREQ {125.000} \
+] [get_ips clk_wiz_0]
+generate_target {instantiation_template} [get_files c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+update_compile_order -fileset sources_1
+generate_target all [get_files  c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+catch { config_ip_cache -export [get_ips -all clk_wiz_0] }
+export_ip_user_files -of_objects [get_files c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci]
+launch_runs clk_wiz_0_synth_1 -jobs 6
+wait_on_run clk_wiz_0_synth_1
+export_simulation -lib_map_path [list {modelsim=C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.cache/compile_simlib/modelsim} {questa=C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.cache/compile_simlib/questa} {riviera=C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.cache/compile_simlib/riviera} {activehdl=C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.cache/compile_simlib/activehdl}] -of_objects [get_files c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci] -directory C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.ip_user_files -ipstatic_source_dir C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.ip_user_files/ipstatic -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+refresh_design
+update_compile_order -fileset sources_1
+report_clocks
+get_ports *
+read_xdc [get_files axi4_dma.xdc]
+report_clocks
+reset_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+refresh_design
+write_schematic -format pdf -orientation portrait C:/Users/harsh/Downloads/schematic.pdf
+reset_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+refresh_design
+# Get the current Vivado project location and name
+set proj_dir  [get_property DIRECTORY [current_project]]
+set proj_name [get_property NAME [current_project]]
+# Create the new source folder if needed
+set src_dir [file join $proj_dir "${proj_name}.srcs" sources_1 new]
+file mkdir $src_dir
+# Define the new SystemVerilog file
+set src_file [file join $src_dir pynq_z2_dma_demo.sv]
+# Create the file only if it does not already exist
+if {![file exists $src_file]} {
+    set fp [open $src_file w]
+    puts $fp {`timescale 1ns / 1ps
+
+module pynq_z2_dma_demo (
+    input  wire clk,
+    input  wire btn_reset,
+    input  wire btn_start,
+    output wire [3:0] led
+);
+
+    localparam [31:0] SRC_ADDR       = 32'h0000_0000;
+    localparam [31:0] DST_ADDR       = 32'h0000_1000;
+    localparam [31:0] TRANSFER_BYTES = 32'd256;
+
+    assign led = 4'b0000;
+
+endmodule
+}
+    close $fp
+}
+# Add the file to the current project
+add_files -norecurse $src_file
+set_property file_type SystemVerilog [get_files $src_file]
+# Print the exact file location
+puts "New source file: $src_file"
+update_compile_order -fileset sources_1
+get_files -all *pynq_z2_dma_demo.sv
+set_property top axi4_dma_top [get_filesets sources_1]
+update_compile_order -fileset sources_1
+get_files -all *axi4_ram_slave.sv
+set_property top pynq_z2_dma_demo [get_filesets sources_1]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+get_property top [get_filesets sources_1]
+set oldxdc [get_files -all *axi4_dma.xdc]
+set_property USED_IN_SYNTHESIS false $oldxdc
+set_property USED_IN_IMPLEMENTATION false $oldxdc
+set proj_dir [get_property DIRECTORY [current_project]]
+set proj_name [get_property NAME [current_project]]
+set xdc_dir [file join $proj_dir "${proj_name}.srcs" sources_1 new]
+file mkdir $xdc_dir
+set xdc_file [file join $xdc_dir pynq_z2_dma_demo.xdc]
+set fp [open $xdc_file w]
+puts $fp {
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports clk]
+create_clock -name CLK125 -period 8.000 -waveform {0.000 4.000} [get_ports clk]
+
+set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports btn_reset]
+set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports btn_start]
+
+set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {led[0]}]
+set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {led[1]}]
+set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports {led[2]}]
+set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {led[3]}]
+}
+close $fp
+add_files -fileset constrs_1 -norecurse $xdc_file
+set_property USED_IN_SYNTHESIS true [get_files $xdc_file]
+set_property USED_IN_IMPLEMENTATION true [get_files $xdc_file]
+update_compile_order -fileset sources_1
+puts "New XDC: $xdc_file"
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+report_clocks
+reset_run synth_1
+close_design
+reset_run synth_1
+reset_run impl_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+wait_on_run synth_1
+puts "Synthesis status: [get_property STATUS [get_runs synth_1]]"
+get_property CONFIG.PRIM_IN_FREQ [get_ips clk_wiz_0]
+get_property CONFIG.CLKOUT1_REQUESTED_OUT_FREQ [get_ips clk_wiz_0]
+create_clock -name CLK125 -period 8.000 -waveform {0.000 4.000} [get_ports clk]
+reset_target all [get_ips clk_wiz_0]
+generate_target all [get_ips clk_wiz_0]
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+# 1. Confirm project and FPGA target
+puts "Project: [get_property NAME [current_project]]"
+puts "Part:    [get_property PART [current_project]]"
+# 2. Set the correct demo top
+set_property top pynq_z2_dma_demo [get_filesets sources_1]
+# 3. Regenerate Clocking Wizard products
+set ip [get_ips clk_wiz_0]
+if {[llength $ip] == 0} {
+    error "clk_wiz_0 IP not found. Stop and inspect the IP Sources."
+}
+reset_target all $ip
+generate_target all $ip
+export_ip_user_files -of_objects $ip -no_script -sync -force
+# 4. Refresh source ordering
+update_compile_order -fileset sources_1
+# 5. Disable automatic incremental checkpoint reuse if supported
+catch {
+    set_property AUTO_INCREMENTAL_CHECKPOINT 0 [get_runs synth_1]
+}
+# 6. Re-run synthesis from scratch
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+# A. Check whether Vivado recognizes the Clocking Wizard IP
+puts "=== CLOCK WIZARD IP ==="
+puts "IP objects: [get_ips -quiet clk_wiz_0]"
+puts "XCI files:  [get_files -all -quiet *clk_wiz_0.xci]"
+# B. Stop if the IP is not registered
+set ip [get_ips -quiet clk_wiz_0]
+if {[llength $ip] == 0} {
+    error "Clocking Wizard is not registered as project IP. Send me the XCI files output."
+}
+# C. Regenerate and synthesize the IP itself
+reset_target all $ip
+generate_target all $ip
+synth_ip $ip
+# D. Refresh project source ordering
+update_compile_order -fileset sources_1
+# E. Check the generated synthesis products
+puts "=== GENERATED IP FILES ==="
+puts [get_files -all -quiet *clk_wiz_0*]
+# F. Remove old synthesis results and launch a fresh run
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+puts "=== SYNTHESIS STATUS ==="
+puts [get_property STATUS [get_runs synth_1]]
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+puts "IMPLEMENTATION STATUS: [get_property STATUS [get_runs impl_1]]"
+puts [get_property STATUS [get_runs impl_1]]
+puts [get_property DIRECTORY [get_runs impl_1]]
+file exists "C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/impl_1/pynq_z2_dma_demo.bit"
+close_sim
+launch_simulation
+source tb_axi4_dma_top.tcl
+relaunch_sim
+# ==========================================================
+# FINAL AXI4 DMA FPGA BUILD VERIFICATION
+# Target: PYNQ-Z2 / xc7z020clg400-1
+# ==========================================================
+set impl [get_runs impl_1]
+set run_status [get_property STATUS $impl]
+set run_dir [get_property DIRECTORY $impl]
+set bit_file [file join $run_dir pynq_z2_dma_demo.bit]
+puts "\n========== BUILD STATUS =========="
+puts "FPGA part: [get_property PART [current_project]]"
+puts "Top module: [get_property top [get_filesets sources_1]]"
+puts "Implementation: $run_status"
+puts "Bitstream exists: [file exists $bit_file]"
+puts "Bitstream path: $bit_file"
+if {![file exists $bit_file]} {
+    error "FAIL: Bitstream missing. Do not program the FPGA."
+}
+if {![string match "*Complete*" $run_status]} {
+    error "FAIL: Implementation is not complete. Do not program."
+}
+# Open the implemented design for detailed reports
+open_run impl_1
+# Generate reports in the implementation folder
+report_clocks -file [file join $run_dir final_clocks.rpt]
+report_timing_summary -delay_type min_max \
+    -report_unconstrained \
+    -file [file join $run_dir final_timing.rpt]
+report_drc -file [file join $run_dir final_drc.rpt]
+report_route_status -file [file join $run_dir final_route_status.rpt]
+puts "\n========== CLOCKS =========="
+foreach c [get_clocks] {
+    puts "[get_property NAME $c] : period [get_property PERIOD $c] ns"
+}
+puts "\n========== REPORT FILES =========="
+puts [file join $run_dir final_clocks.rpt]
+puts [file join $run_dir final_timing.rpt]
+puts [file join $run_dir final_drc.rpt]
+puts [file join $run_dir final_route_status.rpt]
+puts "\n========== BUILD CHECK =========="
+puts "PASS: Implementation and bitstream file checks passed."
+puts "IMPORTANT: Functional DMA data transfer still requires verification."
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+report_timing_summary -delay_type min_max -report_unconstrained
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+puts [get_property STATUS [get_runs impl_1]]
+set bit_file "C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/impl_1/pynq_z2_dma_demo.bit"
+puts "Bitstream exists: [file exists $bit_file]"
+puts "Implementation status: [get_property STATUS [get_runs impl_1]]"
+open_run impl_1
+report_timing_summary -delay_type min_max -report_unconstrained
+report_drc
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/impl_1/pynq_z2_dma_demo.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+program_hw_devices [get_hw_devices xc7z020_1]
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+open_run impl_1
+report_utilization -hierarchical
+report_timing_summary -delay_type max -report_unconstrained
+report_clocks
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_1
+set_property -dict {PACKAGE_PIN H16 IOSTANDARD LVCMOS33} [get_ports clk]
+#create_clock -name CLK125 -period 8.000 -waveform {0.000 4.000} [get_ports clk]
+create_clock -name CLK125 -period 8.000 [get_ports clk]
+set_property -dict {PACKAGE_PIN D19 IOSTANDARD LVCMOS33} [get_ports btn_reset]
+set_property -dict {PACKAGE_PIN D20 IOSTANDARD LVCMOS33} [get_ports btn_start]
+set_property -dict {PACKAGE_PIN R14 IOSTANDARD LVCMOS33} [get_ports {led[0]}]
+set_property -dict {PACKAGE_PIN P14 IOSTANDARD LVCMOS33} [get_ports {led[1]}]
+set_property -dict {PACKAGE_PIN N16 IOSTANDARD LVCMOS33} [get_ports {led[2]}]
+set_property -dict {PACKAGE_PIN M14 IOSTANDARD LVCMOS33} [get_ports {led[3]}]
+report_clocks
+report_clocks
+reset_run clk_wiz_0_synth_1
+reset_run synth_1
+save_constraints -force
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+reset_run impl_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+reset_run synth_1
+refresh_design
