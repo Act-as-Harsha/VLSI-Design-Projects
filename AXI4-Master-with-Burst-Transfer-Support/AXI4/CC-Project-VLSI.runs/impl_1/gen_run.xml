@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1791673659">
+  <File Type="PA-TCL" Name="pynq_z2_dma_demo.tcl"/>
+  <File Type="REPORTS-TCL" Name="pynq_z2_dma_demo_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="pynq_z2_dma_demo_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="pynq_z2_dma_demo_opt.dcp"/>
+  <File Type="OPT-DRC" Name="pynq_z2_dma_demo_drc_opted.rpt"/>
+  <File Type="OPT-UTIL" Name="pynq_z2_dma_demo_utilization_opted.rpt"/>
+  <File Type="OPT-UTIL-PB" Name="pynq_z2_dma_demo_utilization_opted.pb"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="pynq_z2_dma_demo_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="pynq_z2_dma_demo.hwdef"/>
+  <File Type="OPT-TIMING" Name="pynq_z2_dma_demo_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="pynq_z2_dma_demo_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="pynq_z2_dma_demo_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="pynq_z2_dma_demo_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="pynq_z2_dma_demo_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="pynq_z2_dma_demo_placed.dcp"/>
+  <File Type="PLACE-IO" Name="pynq_z2_dma_demo_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="pynq_z2_dma_demo_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="pynq_z2_dma_demo_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="pynq_z2_dma_demo_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="pynq_z2_dma_demo_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="pynq_z2_dma_demo_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="pynq_z2_dma_demo_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="pynq_z2_dma_demo_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="pynq_z2_dma_demo_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="pynq_z2_dma_demo_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="pynq_z2_dma_demo_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="pynq_z2_dma_demo_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="pynq_z2_dma_demo_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="pynq_z2_dma_demo_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="pynq_z2_dma_demo_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="pynq_z2_dma_demo_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="pynq_z2_dma_demo_routed_bb.dcp"/>
+  <File Type="ROUTE-UTIL" Name="pynq_z2_dma_demo_utilization_routed.rpt"/>
+  <File Type="ROUTE-UTIL-PB" Name="pynq_z2_dma_demo_utilization_routed.pb"/>
+  <File Type="ROUTE-DRC" Name="pynq_z2_dma_demo_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="pynq_z2_dma_demo_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="pynq_z2_dma_demo_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="pynq_z2_dma_demo_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="pynq_z2_dma_demo_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="pynq_z2_dma_demo_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="pynq_z2_dma_demo_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="pynq_z2_dma_demo_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="pynq_z2_dma_demo_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="pynq_z2_dma_demo_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="pynq_z2_dma_demo_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="pynq_z2_dma_demo_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="pynq_z2_dma_demo_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="pynq_z2_dma_demo_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="pynq_z2_dma_demo_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="pynq_z2_dma_demo_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="pynq_z2_dma_demo_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="pynq_z2_dma_demo_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="pynq_z2_dma_demo_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="pynq_z2_dma_demo_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="pynq_z2_dma_demo_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="pynq_z2_dma_demo_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="pynq_z2_dma_demo_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="pynq_z2_dma_demo_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="pynq_z2_dma_demo_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="pynq_z2_dma_demo_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="pynq_z2_dma_demo_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="pynq_z2_dma_demo_bus_skew_postroute_physopted.rpx"/>
+  <File Type="NOC_TRAFFIC_SPEC_FILE" Name="pynq_z2_dma_demo.nts"/>
+  <File Type="NOC_SOLUTION_FILE" Name="pynq_z2_dma_demo.ncr"/>
+  <File Type="BG-BIT" Name="pynq_z2_dma_demo.bit"/>
+  <File Type="BG-BIN" Name="pynq_z2_dma_demo.bin"/>
+  <File Type="BITSTR-MSK" Name="pynq_z2_dma_demo.msk"/>
+  <File Type="BITSTR-RBT" Name="pynq_z2_dma_demo.rbt"/>
+  <File Type="BITSTR-NKY" Name="pynq_z2_dma_demo.nky"/>
+  <File Type="BITSTR-BMM" Name="pynq_z2_dma_demo_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="pynq_z2_dma_demo.mmi"/>
+  <File Type="PDI-FILE" Name="pynq_z2_dma_demo.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="pynq_z2_dma_demo_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="pynq_z2_dma_demo_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="pynq_z2_dma_demo.rcfi"/>
+  <File Type="CFI_FILE" Name="pynq_z2_dma_demo.cfi"/>
+  <File Type="RNPI_FILE" Name="pynq_z2_dma_demo.rnpi"/>
+  <File Type="RCDO-FILE" Name="pynq_z2_dma_demo.rcdo"/>
+  <File Type="MARKER-RNPI-FILE" Name="pynq_z2_dma_demo_markers.rnpi"/>
+  <File Type="MARKER-RCDO-FILE" Name="pynq_z2_dma_demo_markers.rcdo"/>
+  <File Type="BOOT_RNPI_FILE" Name="pynq_z2_dma_demo_boot.rnpi"/>
+  <File Type="BOOT_MARKER_RNPI_FILE" Name="pynq_z2_dma_demo_boot_markers.rnpi"/>
+  <File Type="PL_RNPI_FILE" Name="pynq_z2_dma_demo_pld.rnpi"/>
+  <File Type="PL_MARKER_RNPI_FILE" Name="pynq_z2_dma_demo_pld_markers.rnpi"/>
+  <File Type="PL_MASK_RNPI_FILE" Name="pynq_z2_dma_demo_pld_mask.rnpi"/>
+  <File Type="PL_SHUTDOWN_RNPI_FILE" Name="pynq_z2_dma_demo_pld_shutdown.rnpi"/>
+  <File Type="PL_UNMASK_RNPI_FILE" Name="pynq_z2_dma_demo_pld_unmask.rnpi"/>
+  <File Type="PL-RCDO-FILE" Name="pynq_z2_dma_demo_pld.rcdo"/>
+  <File Type="PL-CLEAR-RCDO-FILE" Name="pynq_z2_dma_demo_pld_clear.rcdo"/>
+  <File Type="PL_MARKER_RCDO_FILE" Name="pynq_z2_dma_demo_pld_markers.rcdo"/>
+  <File Type="PL_MASK_RCDO_FILE" Name="pynq_z2_dma_demo_pld_mask.rcdo"/>
+  <File Type="PL_UNMASK_MARKER_RCDO_FILE" Name="pynq_z2_dma_demo_pld_unmask_markers.rcdo"/>
+  <File Type="PL_UNMASK_RCDO_FILE" Name="pynq_z2_dma_demo_pld_unmask.rcdo"/>
+  <File Type="NPI_FILE" Name="pynq_z2_dma_demo.npi"/>
+  <File Type="RBD_FILE" Name="pynq_z2_dma_demo.rbd"/>
+  <File Type="MMI-FILE" Name="pynq_z2_dma_demo.mmi"/>
+  <File Type="BIF-FILE" Name="pynq_z2_dma_demo.bif"/>
+  <File Type="BOOT-BIF-FILE" Name="pynq_z2_dma_demo_boot.bif"/>
+  <File Type="PL-BIF-FILE" Name="pynq_z2_dma_demo_pld.bif"/>
+  <File Type="LTX-FILE" Name="pynq_z2_dma_demo.ltx"/>
+  <File Type="BOOT-LTX-FILE" Name="pynq_z2_dma_demo_boot.ltx"/>
+  <File Type="PL-LTX-FILE" Name="pynq_z2_dma_demo_pld.ltx"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="pynq_z2_dma_demo.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="pynq_z2_dma_demo.sysdef"/>
+  <File Type="BG-BGN" Name="pynq_z2_dma_demo.bgn"/>
+  <File Type="BG-DRC" Name="pynq_z2_dma_demo.drc"/>
+  <File Type="RDI-RDI" Name="pynq_z2_dma_demo.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="pynq_z2_dma_demo_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="pynq_z2_dma_demo_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../axi4_burst_calc.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../axi4_dma_top.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../axi4_read_engine.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../axi4_write_engine.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../axis_fifo.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../dma_controller.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../outstanding_tracker.sv">
+      <FileInfo SFType="Verilog">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../axi4_dma_fpga_top.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../axi4_ram_slave.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pynq_z2_dma_demo.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="pynq_z2_dma_demo"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/CC-Project/axi4_dma.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../axi4_dma.xdc"/>
+        <Attr Name="ImportTime" Val="1787070305"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pynq_z2_dma_demo.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/CC-Project/axi4_dma.xdc"/>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/axi4_dma_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2025"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+</GenRun>

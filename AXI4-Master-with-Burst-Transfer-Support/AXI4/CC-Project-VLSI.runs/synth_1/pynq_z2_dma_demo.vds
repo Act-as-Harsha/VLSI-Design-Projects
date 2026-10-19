@@ -1,0 +1,425 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun Oct 11 04:37:42 2026
+# Process ID         : 20756
+# Current directory  : C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/synth_1
+# Command line       : vivado.exe -log pynq_z2_dma_demo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source pynq_z2_dma_demo.tcl
+# Log file           : C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/synth_1/pynq_z2_dma_demo.vds
+# Journal file       : C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/synth_1\vivado.jou
+# Running On         : HP
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26300
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 10486 MB
+# Total Virtual      : 27289 MB
+# Available Virtual  : 2881 MB
+#-----------------------------------------------------------
+source pynq_z2_dma_demo.tcl -notrace
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 544.633 ; gain = 221.547
+Command: read_checkpoint -incremental C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/utils_1/imports/synth_1/axi4_dma_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/utils_1/imports/synth_1/axi4_dma_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top pynq_z2_dma_demo -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2376
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1330.832 ; gain = 541.328
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'pynq_z2_dma_demo' [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'axi4_dma_fpga_top' [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_dma_fpga_top.sv:4]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter ID_WIDTH bound to: 4 - type: integer 
+	Parameter FIFO_DEPTH bound to: 512 - type: integer 
+	Parameter MAX_BURST_LEN bound to: 16 - type: integer 
+	Parameter MEM_WORDS bound to: 4096 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/synth_1/.Xil/Vivado-20756-HP/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/synth_1/.Xil/Vivado-20756-HP/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'axi4_dma_top' [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_dma_top.sv:8]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter ID_WIDTH bound to: 4 - type: integer 
+	Parameter FIFO_DEPTH bound to: 512 - type: integer 
+	Parameter MAX_BURST_LEN bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'outstanding_tracker' [C:/Users/harsh/Downloads/CC-project/CC-Project/outstanding_tracker.sv:2]
+	Parameter ID_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'outstanding_tracker' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/outstanding_tracker.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'dma_controller' [C:/Users/harsh/Downloads/CC-project/CC-Project/dma_controller.sv:2]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_BURST_LEN bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axi4_burst_calc' [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_burst_calc.sv:4]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_BURST_LEN bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi4_burst_calc' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_burst_calc.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'dma_controller' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/dma_controller.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'axis_fifo' [C:/Users/harsh/Downloads/CC-project/CC-Project/axis_fifo.sv:2]
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter DEPTH bound to: 512 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_fifo' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axis_fifo.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'axi4_read_engine' [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_read_engine.sv:2]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter ID_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi4_read_engine' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_read_engine.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'axi4_write_engine' [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_write_engine.sv:2]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter ID_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_write_engine.sv:93]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_write_engine' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_write_engine.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_dma_top' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_dma_top.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axi4_ram_slave' [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_ram_slave.sv:11]
+	Parameter ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter DATA_WIDTH bound to: 64 - type: integer 
+	Parameter ID_WIDTH bound to: 4 - type: integer 
+	Parameter MEM_WORDS bound to: 4096 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axi4_ram_slave' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_ram_slave.sv:11]
+INFO: [Synth 8-6155] done synthesizing module 'axi4_dma_fpga_top' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_dma_fpga_top.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'pynq_z2_dma_demo' (0#1) [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.sv:4]
+WARNING: [Synth 8-6014] Unused sequential element wr_index_reg was removed.  [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_ram_slave.sv:121]
+WARNING: [Synth 8-6014] Unused sequential element rd_index_reg was removed.  [C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_ram_slave.sv:165]
+WARNING: [Synth 8-6014] Unused sequential element start_toggle_reg was removed.  [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.sv:57]
+WARNING: [Synth 8-7129] Port s_axi_awsize[2] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awburst[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awburst[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wlast in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[2] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arburst[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arburst[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bid[3] in module axi4_write_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bid[2] in module axi4_write_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bid[1] in module axi4_write_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_bid[0] in module axi4_write_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rid[3] in module axi4_read_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rid[2] in module axi4_read_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rid[1] in module axi4_read_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_rid[0] in module axi4_read_engine is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[31] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[30] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[29] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[28] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[27] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[26] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[25] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[24] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[23] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[22] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[21] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[20] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[19] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[18] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[17] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[16] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[15] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[14] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[13] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[12] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[2] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[1] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[0] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port remaining_bytes[2] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port remaining_bytes[1] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port remaining_bytes[0] in module axi4_burst_calc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_done_id[3] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_done_id[2] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_done_id[1] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rd_done_id[0] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_done_id[3] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_done_id[2] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_done_id[1] in module dma_controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port wr_done_id[0] in module dma_controller is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.922 ; gain = 673.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.922 ; gain = 673.418
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1462.922 ; gain = 673.418
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1462.922 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_demo_dma/u_clk_wiz'
+Finished Parsing XDC File [c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'u_demo_dma/u_clk_wiz'
+Parsing XDC File [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.xdc]
+CRITICAL WARNING: [Constraints 18-1056] Clock 'CLK125' completely overrides clock 'clk'.
+New: create_clock -period 8.000 -name CLK125 -waveform {0.000 4.000} [get_ports clk], [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.xdc:10]
+Previous: create_clock -period 8.000 [get_ports clk], [c:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc:1]
+Resolution: Review the constraint files and remove the redundant clock definition(s). If the clock constraints are not saved in a file, you can first save the constraints to an XDC file and reload the design once the constraints have been corrected.
+Finished Parsing XDC File [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.srcs/sources_1/new/pynq_z2_dma_demo.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/pynq_z2_dma_demo_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/pynq_z2_dma_demo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1534.398 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1534.398 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1534.398 ; gain = 744.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1534.398 ; gain = 744.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1534.398 ; gain = 744.895
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi4_read_engine'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi4_write_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                              001 |                               00
+                    S_AR |                              010 |                               01
+                     S_R |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axi4_read_engine'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                 iSTATE1 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'axi4_write_engine'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1534.398 ; gain = 744.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   3 Input   29 Bit       Adders := 2     
+	   2 Input   21 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    9 Bit       Adders := 10    
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 7     
+	               21 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 7     
+	                4 Bit    Registers := 10    
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 42    
++---RAMs : 
+	             256K Bit	(4096 X 64 bit)          RAMs := 1     
+	              32K Bit	(512 X 64 bit)          RAMs := 1     
++---Muxes : 
+	   4 Input   64 Bit        Muxes := 2     
+	   2 Input   64 Bit        Muxes := 12    
+	   2 Input   32 Bit        Muxes := 1     
+	   2 Input   29 Bit        Muxes := 4     
+	   2 Input   21 Bit        Muxes := 1     
+	   3 Input    9 Bit        Muxes := 1     
+	   4 Input    9 Bit        Muxes := 1     
+	   2 Input    9 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 12    
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 30    
+	   3 Input    1 Bit        Muxes := 9     
+	   4 Input    1 Bit        Muxes := 7     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7129] Port s_axi_awsize[2] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awsize[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awburst[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_awburst[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_wlast in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[2] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arsize[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arburst[1] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port s_axi_arburst[0] in module axi4_ram_slave is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_BID[3] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_BID[2] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_BID[1] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_BID[0] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_RID[3] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_RID[2] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_RID[1] in module axi4_dma_top is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_AXI_RID[0] in module axi4_dma_top is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:27 . Memory (MB): peak = 1534.398 ; gain = 744.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 1670.770 ; gain = 881.266
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1718.359 ; gain = 928.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1727.406 ; gain = 937.902
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |clk_wiz |     1|
+|2     |CARRY4  |    32|
+|3     |LUT1    |    55|
+|4     |LUT2    |   115|
+|5     |LUT3    |    40|
+|6     |LUT4    |    56|
+|7     |LUT5    |    55|
+|8     |LUT6    |    62|
+|9     |FDCE    |    46|
+|10    |FDRE    |   152|
+|11    |IBUF    |     2|
+|12    |OBUF    |     4|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:39 . Memory (MB): peak = 1946.082 ; gain = 1085.102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 1946.082 ; gain = 1156.578
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1955.207 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 32 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1958.852 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 5fc77512
+INFO: [Common 17-83] Releasing license: Synthesis
+49 Infos, 75 Warnings, 1 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:00:49 . Memory (MB): peak = 1958.852 ; gain = 1400.516
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1958.852 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.runs/synth_1/pynq_z2_dma_demo.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file pynq_z2_dma_demo_utilization_synth.rpt -pb pynq_z2_dma_demo_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 11 04:38:41 2026...
