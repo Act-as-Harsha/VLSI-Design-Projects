@@ -1,0 +1,110 @@
+`timescale 1ns / 1ps
+
+module axi4_burst_calc #(
+    parameter integer ADDR_WIDTH    = 32,
+    parameter integer DATA_WIDTH    = 64,
+    parameter integer MAX_BURST_LEN = 16
+)(
+    input  wire [ADDR_WIDTH-1:0] addr,
+    input  wire [31:0]           remaining_bytes,
+    input  wire [15:0]           capacity_beats,
+
+    output reg  [8:0]            burst_beats,
+    output reg  [7:0]            burst_len,
+    output reg                    burst_valid
+);
+
+    /*
+     * Optimized for the project's 64-bit AXI data width:
+     *
+     * 8 bytes per beat
+     * Maximum burst = 16 beats = 128 bytes
+     * AXI 4 KB boundary = 4096 bytes
+     *
+     * Instead of performing wide integer arithmetic,
+     * only the small values actually required by the DMA
+     * burst decision are calculated.
+     */
+
+    reg [8:0] remaining_candidate;
+    reg [8:0] boundary_candidate;
+    reg [8:0] capacity_candidate;
+    reg [8:0] selected_beats;
+
+    always @* begin
+
+        /*
+         * Remaining transfer:
+         *
+         * If >= 128 bytes, the burst can use the maximum
+         * 16 beats.
+         *
+         * If < 128 bytes, bits [6:3] give the number of
+         * complete 64-bit beats.
+         */
+        if (remaining_bytes[31:7] != 0)
+            remaining_candidate = 9'd16;
+        else
+            remaining_candidate = {2'b00, remaining_bytes[6:3]};
+
+        /*
+         * 4 KB boundary:
+         *
+         * addr[11:3] gives the current beat position
+         * inside the 4 KB page.
+         *
+         * If the remaining space is >= 16 beats,
+         * boundary does not restrict the burst.
+         *
+         * Otherwise calculate:
+         *
+         *     boundary_beats = 512 - current_beat
+         */
+        if (addr[11:3] <= 9'd496)
+            boundary_candidate = 9'd16;
+        else
+            boundary_candidate = 9'd512 - {1'b0, addr[11:3]};
+
+        /*
+         * FIFO capacity:
+         *
+         * The DMA never requests more than 16 beats.
+         */
+        if (capacity_beats >= 16)
+            capacity_candidate = 9'd16;
+        else
+            capacity_candidate = {3'b000, capacity_beats};
+
+        /*
+         * Select minimum of:
+         *
+         *   remaining data
+         *   4 KB boundary
+         *   FIFO capacity
+         *   maximum burst length
+         */
+        selected_beats = remaining_candidate;
+
+        if (boundary_candidate < selected_beats)
+            selected_beats = boundary_candidate;
+
+        if (capacity_candidate < selected_beats)
+            selected_beats = capacity_candidate;
+
+        /*
+         * Generate AXI burst information.
+         */
+        if (selected_beats != 0) begin
+            burst_valid = 1'b1;
+            burst_beats = selected_beats;
+            burst_len   = selected_beats - 1'b1;
+        end
+        else begin
+            burst_valid = 1'b0;
+            burst_beats = 9'd0;
+            burst_len   = 8'd0;
+        end
+
+    end
+
+endmodule
