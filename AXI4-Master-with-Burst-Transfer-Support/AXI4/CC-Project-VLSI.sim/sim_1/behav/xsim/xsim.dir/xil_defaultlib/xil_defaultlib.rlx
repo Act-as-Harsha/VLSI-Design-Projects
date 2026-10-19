@@ -1,0 +1,14 @@
+0.7
+2020.2
+Nov 14 2025
+19:37:27
+C:/Users/harsh/Downloads/CC-project/CC-Project/CC-Project-VLSI/CC-Project-VLSI.sim/sim_1/behav/xsim/glbl.v,1756381829,verilog,,,,glbl,,,,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_burst_calc.sv,1790959665,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_dma_top.sv,,axi4_burst_calc,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_dma_top.sv,1791662467,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_memory_model.sv,,axi4_dma_top,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_memory_model.sv,1787071885,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_read_engine.sv,,axi4_memory_model,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_read_engine.sv,1787070690,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_write_engine.sv,,axi4_read_engine,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/axi4_write_engine.sv,1787070730,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/axis_fifo.sv,,axi4_write_engine,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/axis_fifo.sv,1787071013,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/dma_controller.sv,,axis_fifo,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/dma_controller.sv,1790959663,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/outstanding_tracker.sv,,dma_controller,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/outstanding_tracker.sv,1787070807,verilog,,C:/Users/harsh/Downloads/CC-project/CC-Project/tb_axi4_dma_top.sv,,outstanding_tracker,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,
+C:/Users/harsh/Downloads/CC-project/CC-Project/tb_axi4_dma_top.sv,1790736913,verilog,,,,tb_axi4_dma_top,,,../../../../CC-Project-VLSI.ip_user_files/ipstatic;E:/xlinix/2025.2/Vivado/data/rsb/busdef,,,,,

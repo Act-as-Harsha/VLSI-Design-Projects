@@ -1,0 +1,17 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "E:/xlinix/2025.2/Vivado/data/rsb/busdef" --include "../../../../CC-Project-VLSI.ip_user_files/ipstatic" \
+"../../../../../axi4_burst_calc.sv" \
+"../../../../../axi4_dma_top.sv" \
+"../../../../../axi4_memory_model.sv" \
+"../../../../../axi4_read_engine.sv" \
+"../../../../../axi4_write_engine.sv" \
+"../../../../../axis_fifo.sv" \
+"../../../../../dma_controller.sv" \
+"../../../../../outstanding_tracker.sv" \
+"../../../../../tb_axi4_dma_top.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

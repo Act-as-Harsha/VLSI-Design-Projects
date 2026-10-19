@@ -1,0 +1,45 @@
+Time resolution is 1 ps
+
+==============================================
+TEST 1: 256-byte DMA transfer
+==============================================
+Write burst completed at time 135000 ns.
+Write burst completed at time 195000 ns.
+Write burst completed at time 265000 ns.
+Write burst completed at time 345000 ns.
+Read burst completed at time 405000 ns.
+Write burst completed at time 425000 ns.
+Write burst completed at time 485000 ns.
+Write burst completed at time 555000 ns.
+Write burst completed at time 635000 ns.
+Write burst completed at time 715000 ns.
+Read burst completed at time 755000 ns.
+Write burst completed at time 795000 ns.
+Write burst completed at time 845000 ns.
+DMA completed successfully at time 885000 ns.
+TEST 1 PASS: 256-byte transfer verified.
+
+==============================================
+TEST 2: 4 KB boundary transfer
+==============================================
+Write burst completed at time 975000 ns.
+Read burst completed at time 1005000 ns.
+Write burst completed at time 1035000 ns.
+Write burst completed at time 1085000 ns.
+Write burst completed at time 1155000 ns.
+Write burst completed at time 1235000 ns.
+Write burst completed at time 1315000 ns.
+Read burst completed at time 1355000 ns.
+Write burst completed at time 1395000 ns.
+Write burst completed at time 1455000 ns.
+Write burst completed at time 1525000 ns.
+Write burst completed at time 1605000 ns.
+Read burst completed at time 1625000 ns.
+Write burst completed at time 1685000 ns.
+DMA completed successfully at time 1725000 ns.
+TEST 2 PASS: 4 KB boundary transfer verified.
+
+==============================================
+ALL TESTS PASSED
+==============================================
+$finish called at time : 1825 ns : File "C:/Users/harsh/Downloads/CC-project/CC-Project/tb_axi4_dma_top.sv" Line 308
